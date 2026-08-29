@@ -28,6 +28,13 @@ RSpec.describe AgenticDevWorkflow::Generators::GitHubActionsGenerator do
       expect(content).to include('bundle exec rubocop')
     end
 
+    it 'inclui verificação de dependências (bundler-audit)' do
+      generator.generate
+      content = File.read(ci_path)
+
+      expect(content).to include('bundler-audit')
+    end
+
     it 'não sobrescreve um ci.yml já existente (idempotência)' do
       FileUtils.mkdir_p(File.join(target_dir, '.github', 'workflows'))
       File.write(ci_path, 'conteúdo customizado pelo usuário')

@@ -71,6 +71,13 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
   corrigido incluindo `lib/**/*.erb` em `spec.files` e verificado via
   `gem build` + `gem install` + execução do binário instalado de verdade.
   Nova spec de regressão: `spec/gemspec_spec.rb`.
+- `ci.yml.erb` (template gerado para projetos-alvo) não rodava nenhuma
+  verificação de dependências — lacuna apontada desde `docs/prompt_gem_ruby_v2.md`
+  e nunca endereçada. Adicionado passo `bundler-audit` ao workflow gerado.
+- `docker-compose.observability.yml.erb` fixava
+  `GF_SECURITY_ADMIN_PASSWORD=admin` no Grafana gerado para todo projeto-alvo.
+  Substituído por `${GRAFANA_ADMIN_PASSWORD:?...}`, que falha alto se a
+  variável não for definida em vez de usar uma senha fraca por padrão.
 
 ## [0.1.0] - Ainda não publicada
 

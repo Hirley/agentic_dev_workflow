@@ -32,6 +32,14 @@ RSpec.describe AgenticDevWorkflow::Generators::ObservabilityGenerator do
       expect(prometheus_content).to include('scrape_configs')
     end
 
+    it 'não fixa uma senha padrão insegura para o Grafana' do
+      generator.generate
+      content = File.read(compose_path)
+
+      expect(content).not_to include('GF_SECURITY_ADMIN_PASSWORD=admin')
+      expect(content).to include('GRAFANA_ADMIN_PASSWORD')
+    end
+
     it 'não sobrescreve arquivos já existentes (idempotência)' do
       FileUtils.mkdir_p(File.join(target_dir, 'observability'))
       File.write(compose_path, 'conteúdo customizado pelo usuário')
