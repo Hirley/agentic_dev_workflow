@@ -9,12 +9,14 @@ e as regras de quando marcar uma tarefa como concluída.
 
 ## Fase 1: Estrutura Inicial + Primeiro Teste
 
-- [ ] Estrutura de pastas da gem (`lib/`, `spec/`, etc.)
-- [ ] `Gemfile` com dependências (thor, rspec, rubocop, faker, shoulda-matchers)
-- [ ] `spec/spec_helper.rb` configurado
-- [ ] `.rspec` pronto
-- [ ] Primeiro teste: `spec/generators/claude_md_generator_spec.rb`
-      (valida que `ClaudeMdGenerator` gera `CLAUDE.md` com seções obrigatórias)
+- [x] Estrutura de pastas da gem (`lib/`, `spec/`, etc.)
+- [x] `Gemfile` com dependências (thor, rspec, rubocop, faker, shoulda-matchers, fakefs)
+- [x] `spec/spec_helper.rb` configurado
+- [x] `.rspec` pronto
+- [x] Primeiro teste: `spec/generators/claude_md_generator_spec.rb`
+      (valida que `ClaudeMdGenerator` gera `CLAUDE.md` com seções obrigatórias;
+      Red confirmado via `bundle exec rspec` — `LoadError` esperado, classe
+      ainda não implementada)
 - [ ] Aguardar aprovação humana antes de seguir para a Fase 2
 
 ## Fase 2: Implementação de Geradores (Red → Green → Refactor)
