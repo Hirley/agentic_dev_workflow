@@ -1,0 +1,24 @@
+require_relative '../ports/task_repository'
+
+module Adapters
+  # Implementação em memória da porta TaskRepository, útil para testes
+  # e para servir de exemplo de como implementar um adapter real.
+  class InMemoryTaskRepository < Ports::TaskRepository
+    def initialize
+      super
+      @tasks = {}
+    end
+
+    def find(id)
+      @tasks[id]
+    end
+
+    def save(task)
+      @tasks[task.id] = task
+    end
+
+    def all
+      @tasks.values
+    end
+  end
+end

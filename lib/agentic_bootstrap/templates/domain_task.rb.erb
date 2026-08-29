@@ -1,0 +1,17 @@
+module Domain
+  # Entidade de exemplo da Arquitetura Hexagonal. Substitua por suas
+  # próprias entidades de domínio.
+  class Task
+    attr_reader :id, :title, :done
+
+    def initialize(id:, title:, done: false)
+      @id = id
+      @title = title
+      @done = done
+    end
+
+    def complete
+      self.class.new(id: id, title: title, done: true)
+    end
+  end
+end

@@ -1,0 +1,28 @@
+# Gerado por agentic_bootstrap (perfil: <%= profile %>)
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.1
+
+<% if profile == 'strict' %>
+Metrics/MethodLength:
+  Max: 10
+
+Metrics/ClassLength:
+  Max: 100
+
+Style/Documentation:
+  Enabled: true
+<% else %>
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/ClassLength:
+  Max: 200
+
+Style/Documentation:
+  Enabled: false
+<% end %>
+
+Layout/LineLength:
+  Max: 120

@@ -1,0 +1,16 @@
+# Arquivos e diretórios que assistentes de IA não devem ler nem incluir
+# em seu contexto (segredos, credenciais, artefatos gerados).
+
+.env
+.env.*
+*.pem
+*.key
+config/master.key
+config/credentials/*.key
+/vendor/
+/node_modules/
+/tmp/
+/log/
+/coverage/
+*.gem
+Gemfile.lock

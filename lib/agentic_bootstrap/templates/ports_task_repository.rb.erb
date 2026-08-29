@@ -1,0 +1,17 @@
+module Ports
+  # Porta (interface) para persistência de Task. Implementações concretas
+  # (adapters) devem responder a estes métodos.
+  class TaskRepository
+    def find(id)
+      raise NotImplementedError
+    end
+
+    def save(task)
+      raise NotImplementedError
+    end
+
+    def all
+      raise NotImplementedError
+    end
+  end
+end

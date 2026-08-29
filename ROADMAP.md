@@ -17,19 +17,19 @@ e as regras de quando marcar uma tarefa como concluída.
       (valida que `ClaudeMdGenerator` gera `CLAUDE.md` com seções obrigatórias;
       Red confirmado via `bundle exec rspec` — `LoadError` esperado, classe
       ainda não implementada)
-- [ ] Aguardar aprovação humana antes de seguir para a Fase 2
+- [x] Aguardar aprovação humana antes de seguir para a Fase 2
 
 ## Fase 2: Implementação de Geradores (Red → Green → Refactor)
 
-- [ ] `ClaudeMdGenerator` → `CLAUDE.md`
-- [ ] `RoadmapGenerator` → `ROADMAP.md`
-- [ ] `ClignoreGenerator` → `.clignore`
-- [ ] `RspecGenerator` → `.rspec` + `spec_helper.rb`
-- [ ] `RubocopGenerator` → `.rubocop.yml` (profiles `strict`/`pragmatic`)
-- [ ] `DockerfileGenerator` → `Dockerfile` (multi-stage: builder/development/production)
-- [ ] `DockerComposeGenerator` → `docker-compose.yml`
-- [ ] `GitHubActionsGenerator` → `.github/workflows/ci.yml`
-- [ ] `ExampleDomainGenerator` → `lib/domain/`, `lib/ports/`, `lib/adapters/` com exemplo
+- [x] `ClaudeMdGenerator` → `CLAUDE.md`
+- [x] `RoadmapGenerator` → `ROADMAP.md`
+- [x] `ClignoreGenerator` → `.clignore`
+- [x] `RspecGenerator` → `.rspec` + `spec_helper.rb`
+- [x] `RubocopGenerator` → `.rubocop.yml` (profiles `strict`/`pragmatic`)
+- [x] `DockerfileGenerator` → `Dockerfile` (multi-stage: builder/development/production)
+- [x] `DockerComposeGenerator` → `docker-compose.yml`
+- [x] `GitHubActionsGenerator` → `.github/workflows/ci.yml`
+- [x] `ExampleDomainGenerator` → `lib/domain/`, `lib/ports/`, `lib/adapters/` com exemplo
 
 ## Fase 3: CLI (Thor) + Integração
 
