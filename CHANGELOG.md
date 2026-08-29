@@ -28,6 +28,21 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
   domain/ports/adapters).
 - `.rubocop.yml` do próprio repositório da gem (não confundir com o
   template gerado para projetos-alvo).
+- `AgenticBootstrap::CLI` (Thor), comando `init [DIR]`, orquestrando os 9
+  geradores com as opções `--no-docker`, `--no-ci`, `--no-observability`,
+  `--profile [strict|pragmatic]`, `--language [ruby]` e
+  `--example-domain NAME`. Testes de integração cobrindo o comando `init`
+  e sua idempotência (rodar 2x não altera arquivos já customizados).
+- `ExampleDomainGenerator` passa a aceitar `entity_name:` (usado por
+  `--example-domain`), nomeando classes e arquivos gerados a partir do
+  nome informado (mantendo `task` como padrão).
+- `.gitattributes` (`* text=auto eol=lf`) para evitar que o `core.autocrlf`
+  do Windows introduza CRLF nos arquivos do repositório.
+
+### Known gaps
+
+- `--no-observability` é aceito pela CLI mas ainda não está associado a
+  nenhum gerador (stack de observabilidade ainda não implementada).
 
 ## [0.1.0] - Unreleased
 

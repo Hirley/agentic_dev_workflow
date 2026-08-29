@@ -1,24 +1,24 @@
-require_relative '../ports/task_repository'
+require_relative '../ports/<%= entity_name %>_repository'
 
 module Adapters
-  # Implementação em memória da porta TaskRepository, útil para testes
-  # e para servir de exemplo de como implementar um adapter real.
-  class InMemoryTaskRepository < Ports::TaskRepository
+  # Implementação em memória da porta <%= class_name %>Repository, útil
+  # para testes e para servir de exemplo de como implementar um adapter real.
+  class InMemory<%= class_name %>Repository < Ports::<%= class_name %>Repository
     def initialize
       super
-      @tasks = {}
+      @items = {}
     end
 
     def find(id)
-      @tasks[id]
+      @items[id]
     end
 
-    def save(task)
-      @tasks[task.id] = task
+    def save(<%= entity_name %>)
+      @items[<%= entity_name %>.id] = <%= entity_name %>
     end
 
     def all
-      @tasks.values
+      @items.values
     end
   end
 end

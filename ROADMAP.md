@@ -33,12 +33,12 @@ e as regras de quando marcar uma tarefa como concluída.
 
 ## Fase 3: CLI (Thor) + Integração
 
-- [ ] Classe `Cli` com comando `init`
-- [ ] Orquestrar geradores em sequência
-- [ ] Suportar opções (`--no-docker`, `--no-ci`, `--no-observability`,
+- [x] Classe `Cli` com comando `init`
+- [x] Orquestrar geradores em sequência
+- [x] Suportar opções (`--no-docker`, `--no-ci`, `--no-observability`,
       `--profile`, `--language`, `--example-domain`)
-- [ ] Garantir idempotência: rodar `init` 2x não quebra nada
-- [ ] Testes de integração (todos os geradores juntos)
+- [x] Garantir idempotência: rodar `init` 2x não quebra nada
+- [x] Testes de integração (todos os geradores juntos)
 
 ## Fase 4: Testes e Polimento
 

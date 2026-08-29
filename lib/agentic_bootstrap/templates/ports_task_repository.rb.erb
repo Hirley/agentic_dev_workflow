@@ -1,12 +1,12 @@
 module Ports
-  # Porta (interface) para persistência de Task. Implementações concretas
-  # (adapters) devem responder a estes métodos.
-  class TaskRepository
+  # Porta (interface) para persistência de <%= class_name %>. Implementações
+  # concretas (adapters) devem responder a estes métodos.
+  class <%= class_name %>Repository
     def find(id)
       raise NotImplementedError
     end
 
-    def save(task)
+    def save(<%= entity_name %>)
       raise NotImplementedError
     end
 

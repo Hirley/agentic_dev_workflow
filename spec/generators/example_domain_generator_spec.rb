@@ -40,5 +40,15 @@ RSpec.describe AgenticBootstrap::Generators::ExampleDomainGenerator do
 
       expect(File.read(domain_path)).to eq('conteúdo customizado pelo usuário')
     end
+
+    it 'nomeia os arquivos e classes a partir de entity_name' do
+      custom_generator = described_class.new(target_dir: target_dir, entity_name: 'invoice')
+
+      custom_generator.generate
+
+      invoice_path = File.join(target_dir, 'lib', 'domain', 'invoice.rb')
+      expect(File.exist?(invoice_path)).to be true
+      expect(File.read(invoice_path)).to include('class Invoice')
+    end
   end
 end
