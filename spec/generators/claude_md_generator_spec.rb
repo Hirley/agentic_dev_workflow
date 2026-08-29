@@ -2,9 +2,9 @@
 
 require 'spec_helper'
 require 'fakefs/spec_helpers'
-require 'agentic_bootstrap/generators/claude_md_generator'
+require 'agentic_dev_workflow/generators/claude_md_generator'
 
-RSpec.describe AgenticBootstrap::Generators::ClaudeMdGenerator do
+RSpec.describe AgenticDevWorkflow::Generators::ClaudeMdGenerator do
   include FakeFS::SpecHelpers
 
   let(:target_dir) { '/fake/project' }

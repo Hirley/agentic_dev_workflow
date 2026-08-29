@@ -2,9 +2,9 @@
 
 require 'spec_helper'
 require 'fakefs/spec_helpers'
-require 'agentic_bootstrap/generators/clignore_generator'
+require 'agentic_dev_workflow/generators/clignore_generator'
 
-RSpec.describe AgenticBootstrap::Generators::ClignoreGenerator do
+RSpec.describe AgenticDevWorkflow::Generators::ClignoreGenerator do
   include FakeFS::SpecHelpers
 
   let(:target_dir) { '/fake/project' }

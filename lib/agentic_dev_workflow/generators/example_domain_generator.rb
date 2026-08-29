@@ -2,7 +2,7 @@
 
 require_relative 'base_generator'
 
-module AgenticBootstrap
+module AgenticDevWorkflow
   module Generators
     # Gera um exemplo de Arquitetura Hexagonal (lib/domain, lib/ports,
     # lib/adapters) no diretório alvo, nomeado a partir de `entity_name`

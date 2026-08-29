@@ -2,9 +2,9 @@
 
 require 'spec_helper'
 require 'fakefs/spec_helpers'
-require 'agentic_bootstrap/generators/example_domain_generator'
+require 'agentic_dev_workflow/generators/example_domain_generator'
 
-RSpec.describe AgenticBootstrap::Generators::ExampleDomainGenerator do
+RSpec.describe AgenticDevWorkflow::Generators::ExampleDomainGenerator do
   include FakeFS::SpecHelpers
 
   let(:target_dir) { '/fake/project' }

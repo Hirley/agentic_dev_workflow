@@ -2,7 +2,7 @@
 
 require_relative 'base_generator'
 
-module AgenticBootstrap
+module AgenticDevWorkflow
   module Generators
     # Gera o arquivo .clignore no diretório alvo, listando arquivos que
     # assistentes de IA não devem ler. Não sobrescreve um .clignore existente.

@@ -2,9 +2,9 @@
 
 require 'spec_helper'
 require 'fakefs/spec_helpers'
-require 'agentic_bootstrap/generators/observability_generator'
+require 'agentic_dev_workflow/generators/observability_generator'
 
-RSpec.describe AgenticBootstrap::Generators::ObservabilityGenerator do
+RSpec.describe AgenticDevWorkflow::Generators::ObservabilityGenerator do
   include FakeFS::SpecHelpers
 
   let(:target_dir) { '/fake/project' }

@@ -12,12 +12,12 @@ require_relative 'generators/git_hub_actions_generator'
 require_relative 'generators/example_domain_generator'
 require_relative 'generators/observability_generator'
 
-module AgenticBootstrap
+module AgenticDevWorkflow
   # CLI (Thor) da gem. Orquestra os geradores para montar o ambiente
-  # agentic_bootstrap no diretório alvo. Rodar `init` mais de uma vez é
+  # agentic_dev_workflow no diretório alvo. Rodar `init` mais de uma vez é
   # seguro: cada gerador é idempotente e não sobrescreve arquivos existentes.
   class CLI < Thor
-    desc 'init [DIR]', 'Inicializa DIR (padrão: diretório atual) com o ambiente agentic_bootstrap'
+    desc 'init [DIR]', 'Inicializa DIR (padrão: diretório atual) com o ambiente agentic_dev_workflow'
     method_option :docker, type: :boolean, default: true, desc: 'Gera Dockerfile e docker-compose.yml'
     method_option :ci, type: :boolean, default: true, desc: 'Gera .github/workflows/ci.yml'
     method_option :observability, type: :boolean, default: true, desc: 'Gera stack de observabilidade'

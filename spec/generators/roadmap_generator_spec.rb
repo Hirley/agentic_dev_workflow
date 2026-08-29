@@ -2,9 +2,9 @@
 
 require 'spec_helper'
 require 'fakefs/spec_helpers'
-require 'agentic_bootstrap/generators/roadmap_generator'
+require 'agentic_dev_workflow/generators/roadmap_generator'
 
-RSpec.describe AgenticBootstrap::Generators::RoadmapGenerator do
+RSpec.describe AgenticDevWorkflow::Generators::RoadmapGenerator do
   include FakeFS::SpecHelpers
 
   let(:target_dir) { '/fake/project' }

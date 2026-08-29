@@ -6,7 +6,7 @@ começar qualquer tarefa.
 
 ## Contexto do Projeto
 
-`agentic_bootstrap` é uma gem CLI (Thor) que inicializa repositórios Ruby
+`agentic_dev_workflow` é uma gem CLI (Thor) que inicializa repositórios Ruby
 com um ambiente pronto para desenvolvimento agentic: Arquitetura Hexagonal,
 TDD-first, Docker, CI/CD e observabilidade. Veja o [README.md](README.md)
 para visão geral e o [ROADMAP.md](ROADMAP.md) para o plano de fases atual.
@@ -21,7 +21,7 @@ Este projeto segue **Red → Green → Refactor** estritamente:
 3. **Refactor**: limpe o código com as specs verdes como rede de segurança.
    Rode `bundle exec rubocop -A` e revise o que foi alterado automaticamente.
 
-Nunca escreva uma classe geradora (`lib/agentic_bootstrap/generators/*`)
+Nunca escreva uma classe geradora (`lib/agentic_dev_workflow/generators/*`)
 sem a spec correspondente já existir em `spec/generators/`.
 
 ### Comandos locais

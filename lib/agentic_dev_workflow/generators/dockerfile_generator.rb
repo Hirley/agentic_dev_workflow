@@ -2,7 +2,7 @@
 
 require_relative 'base_generator'
 
-module AgenticBootstrap
+module AgenticDevWorkflow
   module Generators
     # Gera um Dockerfile multi-stage (builder/development/production) no
     # diretório alvo. Não sobrescreve um Dockerfile existente.

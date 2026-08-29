@@ -2,7 +2,7 @@
 
 require_relative 'base_generator'
 
-module AgenticBootstrap
+module AgenticDevWorkflow
   module Generators
     # Gera .rubocop.yml no diretório alvo, com um dos dois perfis:
     # 'strict' (regras rígidas, indicado para APIs) ou 'pragmatic' (regras

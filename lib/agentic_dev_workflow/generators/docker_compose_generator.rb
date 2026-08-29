@@ -2,7 +2,7 @@
 
 require_relative 'base_generator'
 
-module AgenticBootstrap
+module AgenticDevWorkflow
   module Generators
     # Gera docker-compose.yml no diretório alvo. Não sobrescreve um
     # docker-compose.yml existente.

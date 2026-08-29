@@ -2,7 +2,7 @@
 
 require_relative 'base_generator'
 
-module AgenticBootstrap
+module AgenticDevWorkflow
   module Generators
     # Gera o arquivo CLAUDE.md no diretório alvo, a partir do template
     # em templates/CLAUDE.md.erb. Não sobrescreve um CLAUDE.md existente.

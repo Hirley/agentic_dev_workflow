@@ -2,7 +2,7 @@
 
 require_relative 'base_generator'
 
-module AgenticBootstrap
+module AgenticDevWorkflow
   module Generators
     # Gera .rspec e spec/spec_helper.rb no diretório alvo. Não sobrescreve
     # arquivos já existentes.

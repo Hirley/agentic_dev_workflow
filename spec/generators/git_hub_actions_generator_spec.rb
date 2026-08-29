@@ -2,9 +2,9 @@
 
 require 'spec_helper'
 require 'fakefs/spec_helpers'
-require 'agentic_bootstrap/generators/git_hub_actions_generator'
+require 'agentic_dev_workflow/generators/git_hub_actions_generator'
 
-RSpec.describe AgenticBootstrap::Generators::GitHubActionsGenerator do
+RSpec.describe AgenticDevWorkflow::Generators::GitHubActionsGenerator do
   include FakeFS::SpecHelpers
 
   let(:target_dir) { '/fake/project' }

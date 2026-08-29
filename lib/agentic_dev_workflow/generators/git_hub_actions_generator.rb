@@ -2,7 +2,7 @@
 
 require_relative 'base_generator'
 
-module AgenticBootstrap
+module AgenticDevWorkflow
   module Generators
     # Gera .github/workflows/ci.yml no diretório alvo. Não sobrescreve um
     # ci.yml existente.

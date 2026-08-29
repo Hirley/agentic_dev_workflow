@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative 'lib/agentic_bootstrap/version'
+require_relative 'lib/agentic_dev_workflow/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'agentic_bootstrap'
-  spec.version = AgenticBootstrap::VERSION
+  spec.name = 'agentic_dev_workflow'
+  spec.version = AgenticDevWorkflow::VERSION
   spec.authors = ['Hirley Esmeraldo Ribeiro']
 
   spec.summary = 'Gem CLI (Thor) que inicializa repositórios Ruby com um ambiente agentic-ready.'
@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.metadata['rubygems_mfa_required'] = 'true'
 
   spec.files = Dir.chdir(__dir__) do
-    Dir['lib/**/*.rb', 'exe/*', 'README.md', 'CHANGELOG.md', 'LICENSE', 'agentic_bootstrap.gemspec']
+    Dir['lib/**/*.rb', 'exe/*', 'README.md', 'CHANGELOG.md', 'LICENSE', 'agentic_dev_workflow.gemspec']
   end
   spec.bindir = 'exe'
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }

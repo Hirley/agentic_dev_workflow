@@ -2,9 +2,9 @@
 
 require 'spec_helper'
 require 'fakefs/spec_helpers'
-require 'agentic_bootstrap/generators/rubocop_generator'
+require 'agentic_dev_workflow/generators/rubocop_generator'
 
-RSpec.describe AgenticBootstrap::Generators::RubocopGenerator do
+RSpec.describe AgenticDevWorkflow::Generators::RubocopGenerator do
   include FakeFS::SpecHelpers
 
   let(:target_dir) { '/fake/project' }

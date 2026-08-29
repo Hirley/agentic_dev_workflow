@@ -2,9 +2,9 @@
 
 require 'spec_helper'
 require 'fakefs/spec_helpers'
-require 'agentic_bootstrap/generators/docker_compose_generator'
+require 'agentic_dev_workflow/generators/docker_compose_generator'
 
-RSpec.describe AgenticBootstrap::Generators::DockerComposeGenerator do
+RSpec.describe AgenticDevWorkflow::Generators::DockerComposeGenerator do
   include FakeFS::SpecHelpers
 
   let(:target_dir) { '/fake/project' }

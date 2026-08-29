@@ -3,7 +3,7 @@
 require 'erb'
 require 'fileutils'
 
-module AgenticBootstrap
+module AgenticDevWorkflow
   module Generators
     # Classe base para geradores de arquivos: garante idempotência
     # (nunca sobrescreve um arquivo já existente) e centraliza a

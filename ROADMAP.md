@@ -46,9 +46,9 @@ e as regras de quando marcar uma tarefa como concluída.
 - [x] RuboCop limpo (zero offenses, sem `--auto-gen-config`)
 - [x] `README.md` com instruções de uso completas
 - [x] `CHANGELOG.md` preenchido
-- [x] `agentic_bootstrap.gemspec` pronto para `gem build`/`gem push`
-      (`lib/agentic_bootstrap.rb`, `lib/agentic_bootstrap/version.rb`,
-      `exe/agentic_bootstrap`, `Rakefile` com task padrão)
+- [x] `agentic_dev_workflow.gemspec` pronto para `gem build`/`gem push`
+      (`lib/agentic_dev_workflow.rb`, `lib/agentic_dev_workflow/version.rb`,
+      `exe/agentic_dev_workflow`, `Rakefile` com task padrão)
 
 ## Fase 5: Observabilidade
 

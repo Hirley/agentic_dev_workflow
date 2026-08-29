@@ -1,4 +1,4 @@
-# agentic_bootstrap
+# agentic_dev_workflow
 
 Gem CLI (Thor) que inicializa repositórios Ruby existentes com um ambiente
 otimizado para colaboração entre humanos e IAs (Claude Code, Claude em
@@ -28,11 +28,11 @@ A especificação completa que guia esta implementação está em
 
 ```bash
 # Local (enquanto em desenvolvimento)
-gem build agentic_bootstrap.gemspec
-gem install ./agentic_bootstrap-0.1.0.gem
+gem build agentic_dev_workflow.gemspec
+gem install ./agentic_dev_workflow-0.1.0.gem
 
 # Ou via Gemfile
-gem 'agentic_bootstrap', '~> 0.1.0'
+gem 'agentic_dev_workflow', '~> 0.1.0'
 bundle install
 ```
 
@@ -41,10 +41,10 @@ bundle install
 ```bash
 cd /caminho/para/seu/projeto/ruby
 
-agentic_bootstrap init
+agentic_dev_workflow init
 # → Cria CLAUDE.md, ROADMAP.md, .clignore, .rspec, spec_helper, etc.
 
-agentic_bootstrap init --profile pragmatic --no-ci
+agentic_dev_workflow init --profile pragmatic --no-ci
 # → Sem GitHub Actions, RuboCop com perfil pragmático
 ```
 
@@ -75,7 +75,7 @@ para o plano de fases.
 ### Build da gem
 
 ```bash
-gem build agentic_bootstrap.gemspec
+gem build agentic_dev_workflow.gemspec
 ```
 
 Gera o pacote `.gem` localmente para inspeção/instalação manual. Publicar no

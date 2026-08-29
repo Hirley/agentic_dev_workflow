@@ -2,9 +2,9 @@
 
 require 'spec_helper'
 require 'fakefs/spec_helpers'
-require 'agentic_bootstrap/cli'
+require 'agentic_dev_workflow/cli'
 
-RSpec.describe AgenticBootstrap::CLI do
+RSpec.describe AgenticDevWorkflow::CLI do
   include FakeFS::SpecHelpers
 
   let(:target_dir) { '/fake/project' }

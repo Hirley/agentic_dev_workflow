@@ -2,7 +2,7 @@
 
 require_relative 'base_generator'
 
-module AgenticBootstrap
+module AgenticDevWorkflow
   module Generators
     # Gera o arquivo ROADMAP.md no diretório alvo. Não sobrescreve um
     # ROADMAP.md existente.
