@@ -49,6 +49,8 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
   `Gemfile` passa a usar `gemspec` em vez de declarar `thor` diretamente.
 - `Rakefile` com a task padrão (`bundle exec rake` roda specs + RuboCop),
   documentada em `CLAUDE.md` mas ausente até agora.
+- `simplecov` (dev/test) para medir cobertura de testes; `spec/spec_helper.rb`
+  exige `minimum_coverage 100`. Cobertura atual: 100% (149/149 linhas).
 
 ## [0.1.0] - Ainda não publicada
 
