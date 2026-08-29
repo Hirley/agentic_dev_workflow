@@ -28,6 +28,15 @@ RSpec.describe AgenticBootstrap::CLI do
       expect(File.exist?(path_in_target('Dockerfile'))).to be true
       expect(File.exist?(path_in_target('docker-compose.yml'))).to be true
       expect(File.exist?(path_in_target('.github', 'workflows', 'ci.yml'))).to be true
+      expect(File.exist?(path_in_target('docker-compose.observability.yml'))).to be true
+      expect(File.exist?(path_in_target('observability', 'prometheus.yml'))).to be true
+    end
+
+    it 'não gera a stack de observabilidade quando --no-observability' do
+      described_class.start(['init', target_dir, '--no-observability'])
+
+      expect(File.exist?(path_in_target('docker-compose.observability.yml'))).to be false
+      expect(File.exist?(path_in_target('observability', 'prometheus.yml'))).to be false
     end
 
     it 'não gera Dockerfile nem docker-compose.yml quando --no-docker' do

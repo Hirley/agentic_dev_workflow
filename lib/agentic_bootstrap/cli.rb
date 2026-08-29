@@ -10,6 +10,7 @@ require_relative 'generators/dockerfile_generator'
 require_relative 'generators/docker_compose_generator'
 require_relative 'generators/git_hub_actions_generator'
 require_relative 'generators/example_domain_generator'
+require_relative 'generators/observability_generator'
 
 module AgenticBootstrap
   # CLI (Thor) da gem. Orquestra os geradores para montar o ambiente
@@ -51,6 +52,7 @@ module AgenticBootstrap
       generators.concat(docker_generators(target_dir)) if options['docker']
       generators << Generators::GitHubActionsGenerator.new(target_dir: target_dir) if options['ci']
       generators << example_domain_generator(target_dir) if options['example_domain']
+      generators << Generators::ObservabilityGenerator.new(target_dir: target_dir) if options['observability']
       generators
     end
 

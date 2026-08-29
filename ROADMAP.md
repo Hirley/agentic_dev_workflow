@@ -47,3 +47,10 @@ e as regras de quando marcar uma tarefa como concluída.
 - [ ] `README.md` com instruções de uso completas
 - [ ] `CHANGELOG.md` preenchido
 - [ ] `agentic_bootstrap.gemspec` pronto para `gem push`
+
+## Fase 5: Observabilidade
+
+- [x] `ObservabilityGenerator` → `docker-compose.observability.yml`
+      (Prometheus + Grafana) e `observability/prometheus.yml`
+- [x] Associar `--no-observability` a `ObservabilityGenerator` na `CLI`
+- [x] Testes de integração cobrindo `--no-observability`

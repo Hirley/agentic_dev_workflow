@@ -38,11 +38,10 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
   nome informado (mantendo `task` como padrão).
 - `.gitattributes` (`* text=auto eol=lf`) para evitar que o `core.autocrlf`
   do Windows introduza CRLF nos arquivos do repositório.
-
-### Known gaps
-
-- `--no-observability` é aceito pela CLI mas ainda não está associado a
-  nenhum gerador (stack de observabilidade ainda não implementada).
+- `AgenticBootstrap::Generators::ObservabilityGenerator` (Fase 5): gera
+  `docker-compose.observability.yml` (Prometheus + Grafana) e
+  `observability/prometheus.yml` no projeto-alvo. `--no-observability`
+  agora efetivamente pula esses arquivos na `CLI`.
 
 ## [0.1.0] - Unreleased
 
