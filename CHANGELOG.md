@@ -59,6 +59,19 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
   nome do repositório no GitHub. Como a gem ainda não foi publicada, o
   histórico deste changelog já reflete o novo nome.
 
+### Fixed
+
+- **Crítico**: `agentic_dev_workflow.gemspec` empacotava apenas `lib/**/*.rb`,
+  excluindo os 13 templates ERB usados pelos geradores
+  (`lib/agentic_dev_workflow/templates/*.erb`). Um `gem install` real (fora
+  da árvore-fonte) quebrava imediatamente com `Errno::ENOENT` ao tentar
+  carregar qualquer template — bug não detectado antes porque toda
+  verificação anterior rodava via `-Ilib` direto no código-fonte, nunca
+  contra o `.gem` de fato instalado. Encontrado em revisão de código;
+  corrigido incluindo `lib/**/*.erb` em `spec.files` e verificado via
+  `gem build` + `gem install` + execução do binário instalado de verdade.
+  Nova spec de regressão: `spec/gemspec_spec.rb`.
+
 ## [0.1.0] - Ainda não publicada
 
 Versão inicial em desenvolvimento. `gem push` pendente de aprovação humana

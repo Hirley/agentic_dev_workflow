@@ -21,7 +21,8 @@ Gem::Specification.new do |spec|
   spec.metadata['rubygems_mfa_required'] = 'true'
 
   spec.files = Dir.chdir(__dir__) do
-    Dir['lib/**/*.rb', 'exe/*', 'README.md', 'CHANGELOG.md', 'LICENSE', 'agentic_dev_workflow.gemspec']
+    Dir['lib/**/*.rb', 'lib/**/*.erb', 'exe/*', 'README.md', 'CHANGELOG.md', 'LICENSE',
+        'agentic_dev_workflow.gemspec']
   end
   spec.bindir = 'exe'
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
