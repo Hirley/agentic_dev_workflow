@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'thor', '~> 1.2'
+gemspec
 
 group :development, :test do
   gem 'fakefs', '~> 2.4', require: false

@@ -42,11 +42,14 @@ e as regras de quando marcar uma tarefa como concluída.
 
 ## Fase 4: Testes e Polimento
 
-- [ ] 100% de cobertura de testes
-- [ ] RuboCop limpo (zero offenses, sem `--auto-gen-config`)
-- [ ] `README.md` com instruções de uso completas
-- [ ] `CHANGELOG.md` preenchido
-- [ ] `agentic_bootstrap.gemspec` pronto para `gem push`
+- [ ] 100% de cobertura de testes (pendente: adicionar SimpleCov exige
+      aprovação humana para nova gem, ver `CLAUDE.md`)
+- [x] RuboCop limpo (zero offenses, sem `--auto-gen-config`)
+- [x] `README.md` com instruções de uso completas
+- [x] `CHANGELOG.md` preenchido
+- [x] `agentic_bootstrap.gemspec` pronto para `gem build`/`gem push`
+      (`lib/agentic_bootstrap.rb`, `lib/agentic_bootstrap/version.rb`,
+      `exe/agentic_bootstrap`, `Rakefile` com task padrão)
 
 ## Fase 5: Observabilidade
 

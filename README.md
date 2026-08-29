@@ -65,11 +65,22 @@ agentic_bootstrap init --profile pragmatic --no-ci
 bundle install
 bundle exec rspec
 bundle exec rubocop
+bundle exec rake      # roda specs + RuboCop (task padrão)
 ```
 
 Este projeto segue TDD (Red → Green → Refactor). Veja [CLAUDE.md](CLAUDE.md)
 para o workflow completo de colaboração com IA e [ROADMAP.md](ROADMAP.md)
 para o plano de fases.
+
+### Build da gem
+
+```bash
+gem build agentic_bootstrap.gemspec
+```
+
+Gera o pacote `.gem` localmente para inspeção/instalação manual. Publicar no
+RubyGems (`gem push`) é uma decisão que exige aprovação humana explícita
+(veja [CLAUDE.md](CLAUDE.md)).
 
 ## Licença
 

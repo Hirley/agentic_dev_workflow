@@ -42,7 +42,15 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
   `docker-compose.observability.yml` (Prometheus + Grafana) e
   `observability/prometheus.yml` no projeto-alvo. `--no-observability`
   agora efetivamente pula esses arquivos na `CLI`.
+- `lib/agentic_bootstrap/version.rb` e `lib/agentic_bootstrap.rb`
+  (entrypoint da gem).
+- `exe/agentic_bootstrap`: executável do comando `agentic_bootstrap`.
+- `agentic_bootstrap.gemspec` (Fase 4), pronto para `gem build`.
+  `Gemfile` passa a usar `gemspec` em vez de declarar `thor` diretamente.
+- `Rakefile` com a task padrão (`bundle exec rake` roda specs + RuboCop),
+  documentada em `CLAUDE.md` mas ausente até agora.
 
-## [0.1.0] - Unreleased
+## [0.1.0] - Ainda não publicada
 
-- Versão inicial em desenvolvimento. Ainda não publicada.
+Versão inicial em desenvolvimento. `gem push` pendente de aprovação humana
+(ver [CLAUDE.md](CLAUDE.md#decisões-que-exigem-humano)).
