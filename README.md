@@ -56,7 +56,7 @@ agentic_bootstrap init --profile pragmatic --no-ci
 | `--no-ci` | Pula `.github/workflows/ci.yml` |
 | `--no-observability` | Pula stack de observabilidade |
 | `--profile [strict\|pragmatic]` | Escolhe o perfil do RuboCop |
-| `--language [ruby\|python]` | Linguagem alvo (extensível) |
+| `--language [ruby]` | Linguagem alvo (extensível) |
 | `--example-domain NAME` | Nomeia o exemplo de domínio gerado |
 
 ## Desenvolvimento
