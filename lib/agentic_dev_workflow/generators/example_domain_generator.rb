@@ -12,7 +12,17 @@ module AgenticDevWorkflow
       PORT_TEMPLATE = load_template('ports_task_repository.rb.erb')
       ADAPTER_TEMPLATE = load_template('adapters_in_memory_task_repository.rb.erb')
 
+      # Letras/dígitos, com '_' ou '-' apenas como separador interno (nunca no
+      # início, no fim, nem repetido). Bloqueia caminhos ('/', '..'), nomes
+      # vazios e nomes que gerariam uma constante Ruby inválida (ex.: dígito
+      # inicial).
+      VALID_ENTITY_NAME = /\A[a-zA-Z][a-zA-Z0-9]*([_-][a-zA-Z0-9]+)*\z/.freeze
+
       def initialize(target_dir:, entity_name: 'task')
+        unless entity_name.to_s.match?(VALID_ENTITY_NAME)
+          raise ArgumentError, "entity_name inválido: #{entity_name.inspect}"
+        end
+
         super(target_dir: target_dir)
         @entity_name = entity_name
         @class_name = camelize(entity_name)

@@ -54,7 +54,7 @@ module AgenticDevWorkflow
       generators = []
       generators.concat(docker_generators(target_dir)) if options['docker']
       generators << Generators::GitHubActionsGenerator.new(target_dir: target_dir) if options['ci']
-      generators << example_domain_generator(target_dir) if options['example_domain']
+      generators << example_domain_generator(target_dir) unless options['example_domain'].to_s.empty?
       generators << Generators::ObservabilityGenerator.new(target_dir: target_dir) if options['observability']
       generators
     end
