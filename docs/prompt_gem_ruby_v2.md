@@ -811,7 +811,7 @@ bundle exec rubocop
 
 ---
 
-## Resumo: Por Que Este Prompt É Melhor
+## Resumo:
 
 ✅ **Explícito**: Define cada artefato, cada arquivo, cada linha de código esperada
 ✅ **Educacional**: Ensina Arquitetura Hexagonal com exemplo
@@ -824,7 +824,7 @@ bundle exec rubocop
 
 ---
 
-## Próximos Passos (Para Hirley)
+## Próximos Passos
 
 1. **Revisar este prompt**: Faz sentido? Falta algo?
 2. **Ativar Claude Code** com este prompt (copie `prompt_gem_ruby` completo)
