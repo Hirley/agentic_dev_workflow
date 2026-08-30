@@ -23,7 +23,10 @@ module AgenticDevWorkflow
     method_option :observability, type: :boolean, default: true, desc: 'Gera stack de observabilidade'
     method_option :profile, type: :string, default: 'pragmatic', enum: %w[strict pragmatic],
                             desc: 'Perfil do RuboCop'
-    method_option :language, type: :string, default: 'ruby', enum: %w[ruby], desc: 'Linguagem alvo'
+    # Reservada para suporte a outras linguagens no futuro (ver README).
+    # Hoje só 'ruby' é aceito e nenhum gerador varia o comportamento por ela.
+    method_option :language, type: :string, default: 'ruby', enum: %w[ruby],
+                             desc: "Linguagem alvo (só 'ruby' suportado por enquanto)"
     method_option :example_domain, type: :string, default: nil, desc: 'Nomeia o exemplo de domínio gerado'
     def init(dir = '.')
       target_dir = File.expand_path(dir)

@@ -56,7 +56,7 @@ agentic_dev_workflow init --profile pragmatic --no-ci
 | `--no-ci` | Pula `.github/workflows/ci.yml` |
 | `--no-observability` | Pula stack de observabilidade |
 | `--profile [strict\|pragmatic]` | Escolhe o perfil do RuboCop |
-| `--language [ruby]` | Linguagem alvo (extensível) |
+| `--language [ruby]` | Linguagem alvo — placeholder reservado para o futuro; hoje só `ruby` é aceito e a opção não muda nenhum gerador |
 | `--example-domain NAME` | Nomeia o exemplo de domínio gerado |
 
 ## Desenvolvimento

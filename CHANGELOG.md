@@ -79,6 +79,13 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
   Substituído por `${GRAFANA_ADMIN_PASSWORD:?...}`, que falha alto se a
   variável não for definida em vez de usar uma senha fraca por padrão.
 
+### Documented
+
+- `--language` esclarecido como placeholder reservado para extensão futura:
+  hoje só `ruby` é aceito e a opção não altera nenhum gerador. Decisão do
+  mantenedor manter a opção (em vez de remover, o que mudaria o contrato
+  público da CLI) — ver descrição atualizada em `--help` e no README.
+
 ## [0.1.0] - Ainda não publicada
 
 Versão inicial em desenvolvimento. `gem push` pendente de aprovação humana
