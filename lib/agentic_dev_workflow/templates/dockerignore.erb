@@ -1,0 +1,15 @@
+# Impede que segredos e o histórico do git entrem no contexto de build e,
+# por consequência, nas camadas da imagem gerada pelo Dockerfile.
+.git
+.env
+.env.*
+*.pem
+*.key
+config/master.key
+config/credentials/*.key
+
+/coverage/
+/log/
+/tmp/
+/.bundle/
+*.gem
