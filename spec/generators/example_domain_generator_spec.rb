@@ -50,5 +50,36 @@ RSpec.describe AgenticDevWorkflow::Generators::ExampleDomainGenerator do
       expect(File.exist?(invoice_path)).to be true
       expect(File.read(invoice_path)).to include('class Invoice')
     end
+
+    it 'aceita entity_name com hífen ou underscore internos' do
+      custom_generator = described_class.new(target_dir: target_dir, entity_name: 'my-task_item')
+
+      expect { custom_generator.generate }.not_to raise_error
+    end
+  end
+
+  describe 'validação de entity_name' do
+    [
+      '../../etc/passwd',
+      'task/../../evil',
+      '1task',
+      'task_',
+      '_task',
+      'task__item',
+      'my task',
+      'task.rb'
+    ].each do |invalid_name|
+      it "rejeita entity_name inválido: #{invalid_name.inspect}" do
+        expect do
+          described_class.new(target_dir: target_dir, entity_name: invalid_name)
+        end.to raise_error(ArgumentError)
+      end
+    end
+
+    it 'rejeita entity_name vazio' do
+      expect do
+        described_class.new(target_dir: target_dir, entity_name: '')
+      end.to raise_error(ArgumentError)
+    end
   end
 end

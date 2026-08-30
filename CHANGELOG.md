@@ -7,6 +7,29 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
 
+### Fixed
+
+- **Segurança**: `ExampleDomainGenerator` (usado por `--example-domain`) aceitava
+  qualquer string como `entity_name` e a interpolava sem validação em caminhos
+  de arquivo (`lib/domain/#{entity_name}.rb` etc.), permitindo path traversal
+  (ex.: `--example-domain '../../../../tmp/evil'`) e escrita fora do diretório
+  alvo. Também quebrava com `NoMethodError` para nomes com separador
+  inicial/final/duplicado (ex.: `task_`, `_task`, `task__item`) e gerava
+  constantes Ruby inválidas para nomes iniciados por dígito (ex.: `1task`).
+  Adicionada validação (`VALID_ENTITY_NAME`) que rejeita esses casos com
+  `ArgumentError` antes de qualquer escrita em disco. Nova spec:
+  `spec/generators/example_domain_generator_spec.rb`.
+- `CLI#init` tratava `--example-domain ''` (string vazia) como valor informado
+  (truthy em Ruby), instanciando `ExampleDomainGenerator` desnecessariamente
+  e, após o fix acima, propagando um `ArgumentError`. Agora string vazia é
+  tratada como "não informado", igual a omitir a opção: nenhum gerador é
+  instanciado, nenhum erro é levantado. Nova spec: `spec/cli_spec.rb`.
+- CI (`.github/workflows/ruby.yml`) quebrado em todas as versões da matrix:
+  o pin de `ruby/setup-ruby` estava em um SHA antigo (v1.146.0) cujo
+  manifesto de versões não reconhece a imagem atual do runner `ubuntu-latest`
+  (`ubuntu-24.04`) nem tem build de Ruby 3.3 para ela. Atualizado o pin para
+  `95ef2b0` (v1.321.0).
+
 ## [0.1.0] - 2026-08-29
 
 ### Added

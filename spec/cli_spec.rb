@@ -64,6 +64,14 @@ RSpec.describe AgenticDevWorkflow::CLI do
       expect(Dir.exist?(path_in_target('lib', 'domain'))).to be false
     end
 
+    it 'não gera exemplo de domínio nem levanta erro quando --example-domain é string vazia' do
+      expect do
+        described_class.start(['init', target_dir, '--example-domain', ''])
+      end.not_to raise_error
+
+      expect(Dir.exist?(path_in_target('lib', 'domain'))).to be false
+    end
+
     it 'aplica o perfil strict no .rubocop.yml quando --profile=strict' do
       described_class.start(['init', target_dir, '--profile', 'strict'])
 
