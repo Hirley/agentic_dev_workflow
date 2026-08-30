@@ -7,6 +7,8 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-08-29
+
 ### Added
 
 - Estrutura inicial do repositório: `README.md`, `CLAUDE.md`, `ROADMAP.md`,
@@ -86,7 +88,6 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
   mantenedor manter a opção (em vez de remover, o que mudaria o contrato
   público da CLI) — ver descrição atualizada em `--help` e no README.
 
-## [0.1.0] - Ainda não publicada
-
-Versão inicial em desenvolvimento. `gem push` pendente de aprovação humana
-(ver [CLAUDE.md](CLAUDE.md#decisões-que-exigem-humano)).
+Versão inicial. `gem push` (publicação no RubyGems.org) segue pendente de
+aprovação humana explícita (ver [CLAUDE.md](CLAUDE.md#decisões-que-exigem-humano));
+esta release disponibiliza o `.gem` como asset da GitHub Release.
