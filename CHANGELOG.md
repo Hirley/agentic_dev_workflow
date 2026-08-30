@@ -24,6 +24,11 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
   e, após o fix acima, propagando um `ArgumentError`. Agora string vazia é
   tratada como "não informado", igual a omitir a opção: nenhum gerador é
   instanciado, nenhum erro é levantado. Nova spec: `spec/cli_spec.rb`.
+- CI (`.github/workflows/ruby.yml`) quebrado em todas as versões da matrix:
+  o pin de `ruby/setup-ruby` estava em um SHA antigo (v1.146.0) cujo
+  manifesto de versões não reconhece a imagem atual do runner `ubuntu-latest`
+  (`ubuntu-24.04`) nem tem build de Ruby 3.3 para ela. Atualizado o pin para
+  `95ef2b0` (v1.321.0).
 
 ## [0.1.0] - 2026-08-29
 
