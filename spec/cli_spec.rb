@@ -22,11 +22,13 @@ RSpec.describe AgenticDevWorkflow::CLI do
       expect(File.exist?(path_in_target('CLAUDE.md'))).to be true
       expect(File.exist?(path_in_target('ROADMAP.md'))).to be true
       expect(File.exist?(path_in_target('.clignore'))).to be true
+      expect(File.exist?(path_in_target('.gitignore'))).to be true
       expect(File.exist?(path_in_target('.rspec'))).to be true
       expect(File.exist?(path_in_target('spec', 'spec_helper.rb'))).to be true
       expect(File.exist?(path_in_target('.rubocop.yml'))).to be true
       expect(File.exist?(path_in_target('Dockerfile'))).to be true
       expect(File.exist?(path_in_target('docker-compose.yml'))).to be true
+      expect(File.exist?(path_in_target('.dockerignore'))).to be true
       expect(File.exist?(path_in_target('.github', 'workflows', 'ci.yml'))).to be true
       expect(File.exist?(path_in_target('docker-compose.observability.yml'))).to be true
       expect(File.exist?(path_in_target('observability', 'prometheus.yml'))).to be true
@@ -44,6 +46,13 @@ RSpec.describe AgenticDevWorkflow::CLI do
 
       expect(File.exist?(path_in_target('Dockerfile'))).to be false
       expect(File.exist?(path_in_target('docker-compose.yml'))).to be false
+      expect(File.exist?(path_in_target('.dockerignore'))).to be false
+    end
+
+    it 'gera .gitignore mesmo com --no-docker (não faz parte do grupo docker)' do
+      described_class.start(['init', target_dir, '--no-docker'])
+
+      expect(File.exist?(path_in_target('.gitignore'))).to be true
     end
 
     it 'não gera .github/workflows/ci.yml quando --no-ci' do

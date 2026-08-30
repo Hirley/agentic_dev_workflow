@@ -7,8 +7,29 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
 
+### Added
+
+- `GitignoreGenerator` → `.gitignore` (sempre gerado, faz parte da base) e
+  `DockerignoreGenerator` → `.dockerignore` (parte do grupo `--no-docker`).
+  Antes, a gem não gerava nenhum dos dois: um `git add .` logo após o `init`
+  podia commitar `.env`, `coverage/`, `log/`, `tmp/` etc., e o `Dockerfile`
+  gerado fazia `COPY . .` sem filtro nenhum — segredos e até o histórico do
+  `.git` entravam nas camadas da imagem Docker. O `.clignore` já listava
+  esses padrões como sensíveis para assistentes de IA, mas nada impedia de
+  fato que fossem parar em `git`/imagem Docker. Novas specs:
+  `spec/generators/gitignore_generator_spec.rb` e
+  `spec/generators/dockerignore_generator_spec.rb`.
+
 ### Fixed
 
+- **Segurança**: o estágio `production` do `Dockerfile.erb` rodava como
+  root (nenhum estágio tinha diretiva `USER`). Adicionado usuário
+  `app` não-root nesse estágio (`groupadd`/`useradd` + `COPY --chown`);
+  os estágios `builder`/`development` continuam como root, de propósito,
+  para não quebrar o bind mount de desenvolvimento (`docker-compose.yml`
+  monta `.:/app`, e um usuário não-root ali gera conflito de permissão
+  com o UID do host). Nova spec em
+  `spec/generators/dockerfile_generator_spec.rb`.
 - **Segurança**: `ExampleDomainGenerator` (usado por `--example-domain`) aceitava
   qualquer string como `entity_name` e a interpolava sem validação em caminhos
   de arquivo (`lib/domain/#{entity_name}.rb` etc.), permitindo path traversal

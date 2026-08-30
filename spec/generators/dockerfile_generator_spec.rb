@@ -29,6 +29,13 @@ RSpec.describe AgenticDevWorkflow::Generators::DockerfileGenerator do
       expect(content).to include('AS production')
     end
 
+    it 'roda o estágio de produção com um usuário não-root' do
+      generator.generate
+      production_stage = File.read(dockerfile_path).split('AS production').last
+
+      expect(production_stage).to include('USER app')
+    end
+
     it 'não sobrescreve um Dockerfile já existente (idempotência)' do
       File.write(dockerfile_path, 'conteúdo customizado pelo usuário')
 

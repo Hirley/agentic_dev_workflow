@@ -4,10 +4,12 @@ require 'thor'
 require_relative 'generators/claude_md_generator'
 require_relative 'generators/roadmap_generator'
 require_relative 'generators/clignore_generator'
+require_relative 'generators/gitignore_generator'
 require_relative 'generators/rspec_generator'
 require_relative 'generators/rubocop_generator'
 require_relative 'generators/dockerfile_generator'
 require_relative 'generators/docker_compose_generator'
+require_relative 'generators/dockerignore_generator'
 require_relative 'generators/git_hub_actions_generator'
 require_relative 'generators/example_domain_generator'
 require_relative 'generators/observability_generator'
@@ -45,6 +47,7 @@ module AgenticDevWorkflow
         Generators::ClaudeMdGenerator.new(target_dir: target_dir),
         Generators::RoadmapGenerator.new(target_dir: target_dir),
         Generators::ClignoreGenerator.new(target_dir: target_dir),
+        Generators::GitignoreGenerator.new(target_dir: target_dir),
         Generators::RspecGenerator.new(target_dir: target_dir),
         Generators::RubocopGenerator.new(target_dir: target_dir, profile: options['profile'])
       ]
@@ -66,7 +69,8 @@ module AgenticDevWorkflow
     def docker_generators(target_dir)
       [
         Generators::DockerfileGenerator.new(target_dir: target_dir),
-        Generators::DockerComposeGenerator.new(target_dir: target_dir)
+        Generators::DockerComposeGenerator.new(target_dir: target_dir),
+        Generators::DockerignoreGenerator.new(target_dir: target_dir)
       ]
     end
 
