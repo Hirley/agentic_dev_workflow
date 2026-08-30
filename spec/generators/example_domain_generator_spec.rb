@@ -59,15 +59,15 @@ RSpec.describe AgenticDevWorkflow::Generators::ExampleDomainGenerator do
   end
 
   describe 'validação de entity_name' do
-    %w[
-      ../../etc/passwd
-      task/../../evil
-      1task
-      task_
-      _task
-      task__item
-      my\ task
-      task.rb
+    [
+      '../../etc/passwd',
+      'task/../../evil',
+      '1task',
+      'task_',
+      '_task',
+      'task__item',
+      'my task',
+      'task.rb'
     ].each do |invalid_name|
       it "rejeita entity_name inválido: #{invalid_name.inspect}" do
         expect do

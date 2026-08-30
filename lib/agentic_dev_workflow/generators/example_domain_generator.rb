@@ -16,7 +16,7 @@ module AgenticDevWorkflow
       # início, no fim, nem repetido). Bloqueia caminhos ('/', '..'), nomes
       # vazios e nomes que gerariam uma constante Ruby inválida (ex.: dígito
       # inicial).
-      VALID_ENTITY_NAME = /\A[a-zA-Z][a-zA-Z0-9]*([_-][a-zA-Z0-9]+)*\z/.freeze
+      VALID_ENTITY_NAME = /\A[a-zA-Z][a-zA-Z0-9]*([_-][a-zA-Z0-9]+)*\z/
 
       def initialize(target_dir:, entity_name: 'task')
         unless entity_name.to_s.match?(VALID_ENTITY_NAME)
